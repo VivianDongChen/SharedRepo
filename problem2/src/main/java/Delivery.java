@@ -5,6 +5,7 @@ public class Delivery {
     private Time startTime;
     private Time endTime;
     //
+    //
     public Delivery (String startLocation, String endLocation, Time startTime, Time endTime){
         this.startLocation = startLocation;
         this.endLocation = endLocation;
