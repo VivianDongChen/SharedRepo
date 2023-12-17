@@ -10,6 +10,7 @@ class DeliveryTest {
         Time startTime = new Time(3, 2, 0);
         Time endTime = new Time(3, 15, 45);
         delivery = new Delivery("x", "y", startTime, endTime);
+        //
     }
 
     @Test
