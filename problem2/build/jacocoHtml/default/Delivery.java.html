@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Delivery.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">problem2</a> &gt; <a href="index.source.html" class="el_package">default</a> &gt; <span class="el_source">Delivery.java</span></div><h1>Delivery.java</h1><pre class="source lang-java linenums">public class Delivery {
+
+    private String startLocation;
+    private String endLocation;
+    private Time startTime;
+    private Time endTime;
+
+<span class="fc" id="L8">    public Delivery (String startLocation, String endLocation, Time startTime, Time endTime){</span>
+<span class="fc" id="L9">        this.startLocation = startLocation;</span>
+<span class="fc" id="L10">        this.endLocation = endLocation;</span>
+<span class="fc" id="L11">        this.startTime = startTime;</span>
+<span class="fc" id="L12">        this.endTime = endTime;</span>
+<span class="fc" id="L13">    }</span>
+    String getStartLocation(){
+<span class="fc" id="L15">        return this.startLocation;</span>
+    }
+    String getEndLocation(){
+<span class="fc" id="L18">        return this.endLocation;</span>
+    }
+    Time getStartTime(){
+<span class="fc" id="L21">        return this.startTime;</span>
+    }
+    Time getEndTime(){
+<span class="fc" id="L24">        return this.endTime;</span>
+    }
+
+    public Time getDuration() {
+<span class="fc" id="L28">        int durationHour = endTime.getHour() - startTime.getHour();</span>
+<span class="fc" id="L29">        int durationMinute = endTime.getMinute() - startTime.getMinute();</span>
+<span class="fc" id="L30">        int durationSecond = endTime.getSecond() - startTime.getSecond();</span>
+
+<span class="pc bpc" id="L32" title="1 of 2 branches missed.">        if (durationSecond &lt; 0) {</span>
+<span class="nc" id="L33">            durationSecond += 60;</span>
+<span class="nc" id="L34">            durationMinute--;</span>
+        }
+
+<span class="pc bpc" id="L37" title="1 of 2 branches missed.">        if (durationMinute &lt; 0) {</span>
+<span class="nc" id="L38">            durationMinute += 60;</span>
+<span class="nc" id="L39">            durationHour--;</span>
+        }
+
+<span class="pc bpc" id="L42" title="1 of 2 branches missed.">        if (durationHour &lt; 0) {</span>
+<span class="nc" id="L43">            durationHour += 24;</span>
+        }
+
+<span class="fc" id="L46">        return new Time(durationHour, durationMinute, durationSecond);</span>
+    }
+
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>
