@@ -7,8 +7,8 @@ class DeliveryTest {
 
     @BeforeEach
     void setUp() {
-        Time startTime = new Time(3, 2, 0);
-        Time endTime = new Time(3, 15, 45);
+        Time startTime = new Time(1, 2, 0);
+        Time endTime = new Time(1, 15, 45);
         delivery = new Delivery("x", "y", startTime, endTime);
     }
 
